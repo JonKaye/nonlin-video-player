@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+
+.overlayProps {
+	position:absolute;
+	float:left;
+    top : -50px;
+    left : -100px;
+    z-index:300000;
+	cursor: pointer;
+}
+
+.navArrowProps {
+	background-color:rgba(255,0,0,0);
+	width:30px;
+    min-height:30px;
+}
+
+.item_overlay {
+	position:absolute;
+	float:left;
+	z-index:300000;
+	cursor: pointer;
+	top: 390px;
+	left: 530px;
+}
+
+.video_box {
+	width:80%;
+	margin: 0 auto;
+}
+
+.statebtn {
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	background-color: blue;
+	border-style:solid;
+	border-color: white;
+	border-width: thin;
+	font:15px arial,sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+	line-height:1.5em;
+}
+
+
+</style>
+<script type="text/javascript" src="jquery/jquery-2.0.3.js"></script>
+
+</head>
+
+<body>
+
+<table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+    <div id="video_box" style="position: relative;">
+		<div id="video_overlays" style="position: relative;">
+			<div class="overlayProps navArrowProps" id="f_button" onClick="susFunctions.chgLoc('F')" ></div>
+			<div class="overlayProps navArrowProps" id="b_button" onClick="susFunctions.chgLoc('B')" ></div>
+			<div class="overlayProps navArrowProps" id="l_button" onClick="susFunctions.chgLoc('L')" ></div>
+			<div class="overlayProps navArrowProps" id="r_button" onClick="susFunctions.chgLoc('R')" ></div>
+			<div class="overlayProps navArrowProps" id="u_button" onClick="susFunctions.chgLoc('U')" ></div>
+			<div class="overlayProps navArrowProps" id="d_button" onClick="susFunctions.chgLoc('D')" ></div>
+			<div class="overlayProps navArrowProps" id="fr_button" onClick="susFunctions.chgLoc('FR')" ></div>
+			<div class="overlayProps navArrowProps" id="fl_button" onClick="susFunctions.chgLoc('FL')" ></div>
+			<div class="overlayProps navArrowProps" id="br_button" onClick="susFunctions.chgLoc('BR')" ></div>
+			<div class="overlayProps navArrowProps" id="bl_button" onClick="susFunctions.chgLoc('BL')" ></div>
+			
+			<div class="overlayProps statebtn" id="early_button" onClick="susFunctions.chgState('0')" >early</div>
+			<div class="overlayProps statebtn" id="late_button" onClick="susFunctions.chgState('1')" >late</div>
+			
+			<div class="item_overlay" id="ad_graphic" onClick="susFunctions.gotoAd()"><img src="suslogostacked.jpg"></div>
+		</div>
+
+		<div>
+			<video controls style="position: relative; width: 640px; height: 480px">
+				<source src="early.ogv" type="video/ogg" />
+				<source src="early.webm" type="video/webm">
+				<source src="early.mp4" type="video/mp4">
+               <!-- If the browser doesn't understand the <video> element, then reference a Flash file. You could also write something like "Use a Better Browser!" if you're feeling nasty. (Better to use a Flash file though.) -->
+               <embed src="walkaround.swf"" type="application/x-shockwave-flash" width="640" height="480" allowscriptaccess="always" allowfullscreen="true"></embed>
+			</video>
+		</div>
+	</div>
+	<div id="log"></div>
+</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<script type="text/javascript" src="simparams.js"></script>
+<script type="text/javascript" src="susplayer.js"></script>
+</body>
+</html>
